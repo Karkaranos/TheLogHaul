@@ -19,7 +19,7 @@ public class CameraBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         Vector2 pPos = player.transform.position;
         transform.position = new Vector3(Mathf.Clamp(pPos.x, leftClamp, rightClamp),
