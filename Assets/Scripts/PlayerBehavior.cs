@@ -11,6 +11,7 @@ public class PlayerBehavior : MonoBehaviour
     public Vector2 Jump;
 
     public bool canClimb;
+    public bool canjump;
 
     public Coroutine MovementCoroutineInstance;
 
@@ -35,8 +36,12 @@ public class PlayerBehavior : MonoBehaviour
 
     private void jump_performed(InputAction.CallbackContext obj)
     {
-        myRB.AddForce(Jump, ForceMode2D.Impulse);
-        Invoke("stopMomentum", .5f);
+        if(canjump)
+        {
+            myRB.AddForce(Jump, ForceMode2D.Impulse);
+            Invoke("stopMomentum", .5f);
+            canjump = false;
+        }
     }
 
     private void Move_Cancelled(InputAction.CallbackContext obj)
@@ -76,8 +81,14 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(canClimb)
         {
+            canjump = true;
             myRB.velocity = Vector2.zero;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        canjump = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -92,6 +103,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.tag == "Tree")
         {
+            canjump = true;
             canClimb = true;
             myRB.gravityScale = 0;
         }
@@ -101,6 +113,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.tag == "Tree")
         {
+            canjump = false;
             canClimb = false;
             myRB.gravityScale = gravity;
         }
