@@ -21,6 +21,8 @@ public class PlayerBehavior : MonoBehaviour
     public PlayerInput MyPlayerInput;
     private Rigidbody2D myRB;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +87,6 @@ public class PlayerBehavior : MonoBehaviour
             myRB.velocity = Vector2.zero;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         canjump = true;
