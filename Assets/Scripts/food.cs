@@ -21,7 +21,7 @@ public class food : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            gameManager.FoodCollected++;
+            gameManager.UpdateCounter();
             Destroy(gameObject);
         }
     }
