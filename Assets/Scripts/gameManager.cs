@@ -1,24 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
-    public int FoodCollected;
+    [SerializeField] private int FoodCollected;
+    [SerializeField] private TMP_Text score;
     public int goal;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        score.text = FoodCollected + " / " + goal;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateCounter()
     {
-        if(FoodCollected >= goal)
-        {
-            Debug.Log("win!");
-        }  
+        FoodCollected++;
+        score.text = FoodCollected + " / " + goal;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (FoodCollected >= goal)
+        {
+            if(SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                FindObjectOfType<AudioManager>().PlayCars();
+            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
 }
