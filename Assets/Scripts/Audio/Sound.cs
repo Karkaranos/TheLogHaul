@@ -28,17 +28,24 @@ public class Sound
     public float clipPitch;
     public bool canLoop;
 
-    [Range(-1, 1)]
-    public float panStereo;
-    [Range(0, 1)]
-    public float spacialBlend;
-    public int minSoundDistance;
-    public int maxSoundDistance;
-
     [HideInInspector]
     public AudioSource source;
+    [HideInInspector]
+    public int weightedRangeLow;
+    [HideInInspector]
+    public int weightedRangeHigh;
+
 
     public bool isBackground;
+    [Tooltip("What produces the sound")]
+    public SoundFlavor soundSource;
+    [Tooltip("How often the sound appears when weighted. 1 is rare, 10 is common"), Range(1,10)]
+    public int soundWeight = 5;
+
+    public enum SoundFlavor
+    {
+        NATURE_ENVIRONMENT, HUMAN_ENVIRONMENT, PLAYER
+    }
 
     #endregion
 }

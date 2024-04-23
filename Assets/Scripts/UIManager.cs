@@ -25,6 +25,6 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
-        FindObjectOfType<AudioManager>().PlayBirds();
+        //FindObjectOfType<AudioManager>().PlayBirds();
     }
 }

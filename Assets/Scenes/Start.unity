@@ -153,30 +153,267 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sounds:
-  - name: Birds
-    audClip: {fileID: 8300000, guid: 997716b05285a0840a4efcc85b7eb679, type: 3}
+  - name: Cardinal1
+    audClip: {fileID: 8300000, guid: afa11e6b0b868514485e54e1dea7396c, type: 3}
     clipVolume: 1
     clipPitch: 1
-    canLoop: 1
-    panStereo: 0
-    spacialBlend: 0
-    minSoundDistance: 0
-    maxSoundDistance: 0
+    canLoop: 0
     source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
     isBackground: 1
-  - name: Cars
-    audClip: {fileID: 8300000, guid: 8f323f04b83e5a84097cc5b9ad3b4af9, type: 3}
+    soundSource: 0
+    soundWeight: 5
+  - name: Cardinal2
+    audClip: {fileID: 8300000, guid: 9316ca652f96e844c860f0c888e99e09, type: 3}
     clipVolume: 1
     clipPitch: 1
-    canLoop: 1
-    panStereo: 0
-    spacialBlend: 0
-    minSoundDistance: 0
-    maxSoundDistance: 0
+    canLoop: 0
     source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
     isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Cardinal3
+    audClip: {fileID: 8300000, guid: 71ae9e715ddb1e742a867837ef00a54e, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Cardinal4
+    audClip: {fileID: 8300000, guid: 3097eebff29557347845c0166d85f9da, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Cardinal5
+    audClip: {fileID: 8300000, guid: 2106adc6b8ecc974f9082f5423dad688, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Chickadee1
+    audClip: {fileID: 8300000, guid: 273db925a455711498da05560e662dbc, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Chickadee2
+    audClip: {fileID: 8300000, guid: 8ffc9fd841701d74eac1f9cb14d88a22, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Wren1
+    audClip: {fileID: 8300000, guid: 40383e75d68a2be4aac3766704af134f, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Wren2
+    audClip: {fileID: 8300000, guid: e465ba6aa94f5e24d811054a9a99a48b, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Sparrow
+    audClip: {fileID: 8300000, guid: 204f15e0d05f7e845b0d7872613a9c68, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: IndigoBunting1
+    audClip: {fileID: 8300000, guid: f37577d470ce13444b39023bdf8104b9, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: IndigoBunting2
+    audClip: {fileID: 8300000, guid: 502bb366952dff344b7cc869bc66c817, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Woodpecker
+    audClip: {fileID: 8300000, guid: 45343cc7021d72d4ca8ac2bfb8882728, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Blackbird
+    audClip: {fileID: 8300000, guid: 31bf8b649ba110540876357f0a5548a0, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Robin1
+    audClip: {fileID: 8300000, guid: b46952b1d54235d47b5874b9eb00c160, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Robin2
+    audClip: {fileID: 8300000, guid: a2a86620bfb277843927ecca7b889b4a, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Robin3
+    audClip: {fileID: 8300000, guid: 41a5fcc49bf7b334d9e7bf419d882784, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Tufted1
+    audClip: {fileID: 8300000, guid: f6a9b82842a2f1a40849e6a9a7fd674d, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: Tufted2
+    audClip: {fileID: 8300000, guid: 65f8a27e35400b44b83492251e34d6e2, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: ThroatedSparrow1
+    audClip: {fileID: 8300000, guid: a74560df4da072e4e86e33d06797ed5e, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: ThroatedSparrow2
+    audClip: {fileID: 8300000, guid: dec74cd81e5f374488f94747da4b2b92, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: ThroatedSparrow3
+    audClip: {fileID: 8300000, guid: 8e26ce86cbea2a748b425ecbb46e1333, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 0
+    soundWeight: 5
+  - name: CrashPrevention
+    audClip: {fileID: 8300000, guid: 0d5869e6e03af9c4ba687abac4f29c66, type: 3}
+    clipVolume: 0.5
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
   masterMixer: {fileID: 24300002, guid: a3e9e4df55d704843ba59de0bc6c85a1, type: 2}
   musicVolume: 1
+  Levels:
+  - deforestationLevel: 1
+    progressiveDeforestation: 0
+  useWeightedAmounts: 1
+  minTimeBetweenSounds: 0.3
+  maxTimeBetweenSounds: 5
 --- !u!4 &72021560
 Transform:
   m_ObjectHideFlags: 0
