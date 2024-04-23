@@ -180,11 +180,10 @@ public class AudioManager : MonoBehaviour
         int index = 0;
         foreach(Sound s in Sounds)
         {
-            s.weightedRangeLow = index;
-            index += s.soundWeight;
-            s.weightedRangeHigh = index;
-            maxWeight += s.soundWeight;
-            index++;
+            s.weightedRangeLow = maxWeight;
+            s.weightedRangeHigh = s.soundWeight + s.weightedRangeLow;
+            maxWeight = s.weightedRangeHigh;
+            print(s.name + " Range: " + s.weightedRangeLow + " - " + s.weightedRangeHigh + " / " + maxWeight);
         }
 
     }
@@ -245,7 +244,7 @@ public class AudioManager : MonoBehaviour
 
             Sound.SoundFlavor flavor;
 
-            if(randomChance <= natureChance)
+            if(randomChance < natureChance)
             {
                 flavor = Sound.SoundFlavor.NATURE_ENVIRONMENT;
             }
@@ -270,12 +269,14 @@ public class AudioManager : MonoBehaviour
 
     private void PlayWeightedBackgroundSound(Sound.SoundFlavor flavor)
     {
+        print(flavor);
         string playMe = "";
         while(playMe.Equals(""))
         {
             int checkVal = UnityEngine.Random.Range(0, maxWeight);
             foreach(Sound s in Sounds)
             {
+                //This condition is never true for human sounds
                 if(checkVal < s.weightedRangeHigh && checkVal >= s.weightedRangeLow)
                 {
                     if(s.soundSource == flavor && s.isBackground)
@@ -287,7 +288,10 @@ public class AudioManager : MonoBehaviour
             }
         }
 
-        Play(playMe);
+        if(playMe!="")
+        {
+            Play(playMe);
+        }
     }
 
     private void PlayBackgroundSound(Sound.SoundFlavor flavor)
