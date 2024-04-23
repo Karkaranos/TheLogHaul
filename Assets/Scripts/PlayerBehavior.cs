@@ -8,6 +8,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public float gravity;
     public float speed;
+    public int smogMultiplier;
     public Vector2 Jump;
 
     public bool canClimb;
@@ -98,6 +99,10 @@ public class PlayerBehavior : MonoBehaviour
         {
             Invoke("stopMomentum", .3f);
         }
+        else if(collision.tag == "smog")
+        {
+            speed = speed / smogMultiplier;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -117,6 +122,10 @@ public class PlayerBehavior : MonoBehaviour
             canjump = false;
             canClimb = false;
             myRB.gravityScale = gravity;
+        }
+        else if (collision.tag == "smog")
+        {
+            speed = speed * smogMultiplier;
         }
     }
 }
