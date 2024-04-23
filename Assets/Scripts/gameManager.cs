@@ -7,20 +7,22 @@ using UnityEngine.SceneManagement;
 public class gameManager : MonoBehaviour
 {
     [SerializeField] private int FoodCollected;
-    [SerializeField] private TMP_Text score;
+    [SerializeField] private TMP_Text foodHaveTxt;
+    [SerializeField] private TMP_Text outOf;
     public int goal;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        score.text = FoodCollected + " / " + goal;
+        foodHaveTxt.text = FoodCollected + "";
+        outOf.text = goal + "";
     }
 
     public void UpdateCounter()
     {
         FoodCollected++;
-        score.text = FoodCollected + " / " + goal;
+        foodHaveTxt.text = FoodCollected + ""; 
+        outOf.text = goal + "";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
