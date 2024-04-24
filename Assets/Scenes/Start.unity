@@ -395,8 +395,107 @@ MonoBehaviour:
     isBackground: 1
     soundSource: 0
     soundWeight: 5
-  - name: CrashPrevention
+  - name: Motorcycle
     audClip: {fileID: 8300000, guid: 0d5869e6e03af9c4ba687abac4f29c66, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Car1
+    audClip: {fileID: 8300000, guid: 9153927180f9f1e43b534c1e6af5cbc7, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Car2
+    audClip: {fileID: 8300000, guid: 57a05a3c11f9e0b4f8a0252fdf3d4a25, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Car3
+    audClip: {fileID: 8300000, guid: b96908f2e9902d44bb702fc9e7c9c273, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Jackhammer
+    audClip: {fileID: 8300000, guid: 20a295f57e2920d468b509ecd2d9033c, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Logging
+    audClip: {fileID: 8300000, guid: b15aab7949822394fa4f99ddc930be65, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Mechanical1
+    audClip: {fileID: 8300000, guid: c1979f99b04c90d4a9ac17f13450dade, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Saw
+    audClip: {fileID: 8300000, guid: 075d99c323e5c964cb360cb79919b562, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Axe
+    audClip: {fileID: 8300000, guid: 978a5b692ee98d44aa49c3940f7c1215, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 1
+    soundSource: 1
+    soundWeight: 5
+  - name: Hit
+    audClip: {fileID: 8300000, guid: 0ec9fb678e1a2b2478fad0ee5db1e0bc, type: 3}
     clipVolume: 1
     clipPitch: 1
     canLoop: 0
@@ -409,11 +508,13 @@ MonoBehaviour:
   masterMixer: {fileID: 24300002, guid: a3e9e4df55d704843ba59de0bc6c85a1, type: 2}
   musicVolume: 1
   Levels:
+  - deforestationLevel: 1
+    progressiveDeforestation: 0
   - deforestationLevel: 7
     progressiveDeforestation: 0
   useWeightedAmounts: 1
   minTimeBetweenSounds: 0.3
-  maxTimeBetweenSounds: 5
+  maxTimeBetweenSounds: 3
 --- !u!4 &72021560
 Transform:
   m_ObjectHideFlags: 0

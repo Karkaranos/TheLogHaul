@@ -31,8 +31,10 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Random Controls")]
     [SerializeField] private bool useWeightedAmounts = true;
-    [SerializeField] private float minTimeBetweenSounds = .2f;
-    [SerializeField] private float maxTimeBetweenSounds = .5f;
+    [SerializeField] private float minNatureTime = .2f;
+    [SerializeField] private float maxNatureTime = 3;
+    [SerializeField] private float minHumanTime = .5f;
+    [SerializeField] private float maxHumanTime = 6;
 
     //public Texture2D glassTexture;
     //public CursorMode cursorMode = CursorMode.Auto;
@@ -238,6 +240,7 @@ public class AudioManager : MonoBehaviour
     {
         while(true)
         {
+            float minTime, maxTime;
             float natureChance = (7f - Levels[level-1].deforestationLevel) / 6f;
 
             float randomChance = UnityEngine.Random.Range(0f, 1f);
@@ -247,10 +250,14 @@ public class AudioManager : MonoBehaviour
             if(randomChance < natureChance)
             {
                 flavor = Sound.SoundFlavor.NATURE_ENVIRONMENT;
+                minTime = minNatureTime;
+                maxTime = maxNatureTime;
             }
             else
             {
                 flavor = Sound.SoundFlavor.HUMAN_ENVIRONMENT;
+                minTime = minHumanTime;
+                maxTime = maxHumanTime;
             }
 
             if (useWeightedAmounts)
@@ -262,7 +269,7 @@ public class AudioManager : MonoBehaviour
                 PlayBackgroundSound(flavor);
             }
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(minTimeBetweenSounds, maxTimeBetweenSounds));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(minTime, maxTime));
 
         }
     }
