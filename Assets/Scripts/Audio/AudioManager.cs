@@ -21,9 +21,20 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup masterMixer;
     public float musicVolume;
 
+    public LevelSoundBlend[] Levels;
+
     private bool gameStarted = false;
 
     private string previousTrack;
+    private int maxWeight;
+    private Coroutine background;
+
+    [Header("Audio Random Controls")]
+    [SerializeField] private bool useWeightedAmounts = true;
+    [SerializeField] private float minNatureTime = .2f;
+    [SerializeField] private float maxNatureTime = 3;
+    [SerializeField] private float minHumanTime = .5f;
+    [SerializeField] private float maxHumanTime = 6;
 
     //public Texture2D glassTexture;
     //public CursorMode cursorMode = CursorMode.Auto;
@@ -55,14 +66,11 @@ public class AudioManager : MonoBehaviour
             sound.source.volume = sound.clipVolume;
             sound.source.pitch = sound.clipPitch;
             sound.source.loop = sound.canLoop;
-            sound.source.panStereo = sound.panStereo;
-            sound.source.spatialBlend = sound.spacialBlend;
-            sound.source.minDistance = sound.minSoundDistance;
-            sound.source.maxDistance = sound.maxSoundDistance;
             sound.source.rolloffMode = AudioRolloffMode.Linear;
             sound.source.playOnAwake = false;
         }
 
+        WeighSounds();
 
         //Cursor.SetCursor(glassTexture, hotSpot, cursorMode);
     }
@@ -82,7 +90,7 @@ public class AudioManager : MonoBehaviour
         if (sound != null)
         {
             sound.source.Play();
-            print(audioName + " started");
+            //print(audioName + " started");
         }
     }
 
@@ -169,7 +177,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void WeighSounds()
+    {
+        int index = 0;
+        foreach(Sound s in Sounds)
+        {
+            s.weightedRangeLow = maxWeight;
+            s.weightedRangeHigh = s.soundWeight + s.weightedRangeLow;
+            maxWeight = s.weightedRangeHigh;
+            print(s.name + " Range: " + s.weightedRangeLow + " - " + s.weightedRangeHigh + " / " + maxWeight);
+        }
 
+    }
 
     #endregion
 
@@ -185,6 +204,10 @@ public class AudioManager : MonoBehaviour
 
     private void StopAllBackground()
     {
+        if(background!=null)
+        {
+            StopCoroutine(background);
+        }
         for (int i = 0; i < Sounds.Length; i++)
         {
             if (Sounds[i].isBackground)
@@ -205,6 +228,92 @@ public class AudioManager : MonoBehaviour
     {
         StopAllBackground();
         Play("Cars");
+    }
+
+    public void PlayStaticLevelBackground(int level)
+    {
+        StopAllBackground();
+        background = StartCoroutine(StaticBackground(level));
+    }
+
+    private IEnumerator StaticBackground(int level)
+    {
+        while(true)
+        {
+            float minTime, maxTime;
+            float natureChance = (7f - Levels[level-1].deforestationLevel) / 6f;
+
+            float randomChance = UnityEngine.Random.Range(0f, 1f);
+
+            Sound.SoundFlavor flavor;
+
+            if(randomChance < natureChance)
+            {
+                flavor = Sound.SoundFlavor.NATURE_ENVIRONMENT;
+                minTime = minNatureTime;
+                maxTime = maxNatureTime;
+            }
+            else
+            {
+                flavor = Sound.SoundFlavor.HUMAN_ENVIRONMENT;
+                minTime = minHumanTime;
+                maxTime = maxHumanTime;
+            }
+
+            if (useWeightedAmounts)
+            {
+                PlayWeightedBackgroundSound(flavor);
+            }
+            else
+            {
+                PlayBackgroundSound(flavor);
+            }
+
+            yield return new WaitForSeconds(UnityEngine.Random.Range(minTime, maxTime));
+
+        }
+    }
+
+    private void PlayWeightedBackgroundSound(Sound.SoundFlavor flavor)
+    {
+        print(flavor);
+        string playMe = "";
+        while(playMe.Equals(""))
+        {
+            int checkVal = UnityEngine.Random.Range(0, maxWeight);
+            foreach(Sound s in Sounds)
+            {
+                //This condition is never true for human sounds
+                if(checkVal < s.weightedRangeHigh && checkVal >= s.weightedRangeLow)
+                {
+                    if(s.soundSource == flavor && s.isBackground)
+                    {
+                        playMe = s.name;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if(playMe!="")
+        {
+            Play(playMe);
+        }
+    }
+
+    private void PlayBackgroundSound(Sound.SoundFlavor flavor)
+    {
+        string playMe = "";
+        while (playMe.Equals(""))
+        {
+            int checkVal = UnityEngine.Random.Range(0, Sounds.Length);
+            if(Sounds[checkVal].isBackground && Sounds[checkVal].soundSource == flavor)
+            {
+                playMe = Sounds[checkVal].name;
+            }
+        }
+
+        Play(playMe);
     }
 
     #endregion
