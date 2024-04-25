@@ -179,13 +179,11 @@ public class AudioManager : MonoBehaviour
 
     private void WeighSounds()
     {
-        int index = 0;
         foreach(Sound s in Sounds)
         {
             s.weightedRangeLow = maxWeight;
             s.weightedRangeHigh = s.soundWeight + s.weightedRangeLow;
             maxWeight = s.weightedRangeHigh;
-            print(s.name + " Range: " + s.weightedRangeLow + " - " + s.weightedRangeHigh + " / " + maxWeight);
         }
 
     }
@@ -238,10 +236,24 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator StaticBackground(int level)
     {
+        float maxTimeLeft= 0, timeLeft = 0;
+        if(Levels[level-1].progressiveDeforestation)
+        {
+            maxTimeLeft = Levels[level - 1].secondsToFinish;
+            timeLeft = maxTimeLeft;
+        }
         while(true)
         {
-            float minTime, maxTime;
-            float natureChance = (7f - Levels[level-1].deforestationLevel) / 6f;
+            float minTime, maxTime, natureChance;
+            natureChance = (7f - Levels[level - 1].deforestationLevel) / 6f;
+            if (Levels[level-1].progressiveDeforestation && level != Levels.Length)
+            {
+                print("Time left: " + timeLeft + " / " + maxTimeLeft);
+                natureChance -= (1 -(timeLeft / maxTimeLeft)) * (((7f - Levels[level - 1].deforestationLevel) / 6f) - ((7f - Levels[level].deforestationLevel) / 6f));
+                print(natureChance);
+            }
+
+            
 
             float randomChance = UnityEngine.Random.Range(0f, 1f);
 
@@ -269,7 +281,10 @@ public class AudioManager : MonoBehaviour
                 PlayBackgroundSound(flavor);
             }
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(minTime, maxTime));
+            float waitForMe = UnityEngine.Random.Range(minTime, maxTime);
+            timeLeft = Mathf.Clamp(timeLeft-waitForMe, 0, maxTimeLeft);
+            
+            yield return new WaitForSeconds(waitForMe);
 
         }
     }
