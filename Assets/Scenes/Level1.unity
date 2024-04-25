@@ -3483,7 +3483,7 @@ MonoBehaviour:
   FoodCollected: 0
   foodHaveTxt: {fileID: 1262139344}
   outOf: {fileID: 1262139343}
-  goal: 2
+  goal: 3
 --- !u!4 &970377231
 Transform:
   m_ObjectHideFlags: 0

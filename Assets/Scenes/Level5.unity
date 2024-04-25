@@ -991,7 +991,7 @@ MonoBehaviour:
   FoodCollected: 0
   foodHaveTxt: {fileID: 1241100129}
   outOf: {fileID: 1241100127}
-  goal: 2
+  goal: 3
 --- !u!61 &372472664
 BoxCollider2D:
   m_ObjectHideFlags: 0
