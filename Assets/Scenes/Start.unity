@@ -511,7 +511,22 @@ MonoBehaviour:
   - deforestationLevel: 1
     progressiveDeforestation: 0
     secondsToFinish: 60
+  - deforestationLevel: 2
+    progressiveDeforestation: 0
+    secondsToFinish: 10
+  - deforestationLevel: 3
+    progressiveDeforestation: 0
+    secondsToFinish: 10
+  - deforestationLevel: 4
+    progressiveDeforestation: 0
+    secondsToFinish: 10
   - deforestationLevel: 5
+    progressiveDeforestation: 0
+    secondsToFinish: 10
+  - deforestationLevel: 6
+    progressiveDeforestation: 0
+    secondsToFinish: 10
+  - deforestationLevel: 7
     progressiveDeforestation: 0
     secondsToFinish: 10
   useWeightedAmounts: 1
