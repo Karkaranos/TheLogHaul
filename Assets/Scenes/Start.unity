@@ -510,11 +510,15 @@ MonoBehaviour:
   Levels:
   - deforestationLevel: 1
     progressiveDeforestation: 0
-  - deforestationLevel: 7
+    secondsToFinish: 60
+  - deforestationLevel: 5
     progressiveDeforestation: 0
+    secondsToFinish: 10
   useWeightedAmounts: 1
-  minTimeBetweenSounds: 0.3
-  maxTimeBetweenSounds: 3
+  minNatureTime: 0.2
+  maxNatureTime: 3
+  minHumanTime: 0.5
+  maxHumanTime: 6
 --- !u!4 &72021560
 Transform:
   m_ObjectHideFlags: 0
