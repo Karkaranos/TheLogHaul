@@ -72,20 +72,18 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(lastY >= transform.position.y)
+        if(myRB.velocity.y <= 0)
         {
             jumping = false;
-            if(lastY > transform.position.y)
+            if(myRB.velocity.y < -.5)
             {
                 falling = true;
             }
         }
-        if(lastY <= transform.position.y)
+        if(myRB.velocity.y >= 0)
         {
             falling= false;
         }
-
-        lastY = transform.position.y;
     }
 
     private void FixedUpdate()
@@ -132,6 +130,14 @@ public class PlayerBehavior : MonoBehaviour
         while (true)
         {
             Vector2 direction = Move.ReadValue<Vector2>();
+            if (direction.x < -0.1)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if (direction.x > 0.1)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
             if (canClimb)
             {
                 transform.position = transform.position + new Vector3(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime, 0);
@@ -148,11 +154,12 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(canClimb)
         {
+            jumping = false;
             canjump = true;
             myRB.velocity = Vector2.zero;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         canjump = true;
     }
@@ -161,6 +168,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.tag == "Tree")
         {
+            jumping = false;
             climbing= true;
             Invoke("stopMomentum", .3f);
         }
@@ -174,6 +182,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.tag == "Tree")
         {
+            jumping = false;
             canjump = true;
             canClimb = true;
             myRB.gravityScale = 0;
