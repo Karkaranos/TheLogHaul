@@ -159,7 +159,11 @@ public class PlayerBehavior : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        canjump = true;
+        if(collision.gameObject.transform.position.y < gameObject.transform.position.y)
+        {
+            canjump = true;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -180,8 +184,11 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.tag == "Tree")
         {
-            jumping = false;
-            canjump = true;
+            if(myRB.velocity.y < .5)
+            {
+                jumping = false;
+                canjump = true;
+            }
             canClimb = true;
             myRB.gravityScale = 0;
         }
