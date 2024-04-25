@@ -14,7 +14,7 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().PlayStaticLevelBackground(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<AudioManager>().PlayLevelBackgroundNoise(SceneManager.GetActiveScene().buildIndex);
         foodHaveTxt.text = FoodCollected + "";
         outOf.text = goal + "";
     }
@@ -30,11 +30,15 @@ public class gameManager : MonoBehaviour
     {
         if (FoodCollected >= goal)
         {
-            if(SceneManager.GetActiveScene().buildIndex == 1)
+            if (SceneManager.GetActiveScene().buildIndex != 7)
             {
-                FindObjectOfType<AudioManager>().PlayCars();
+                SceneManager.LoadScene(9);
+                FindObjectOfType<AudioManager>().LvlIndex = SceneManager.GetActiveScene().buildIndex + 1;
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            else
+            {
+                SceneManager.LoadScene(8);
+            }
         }
     }
 
