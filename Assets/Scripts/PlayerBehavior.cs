@@ -29,8 +29,6 @@ public class PlayerBehavior : MonoBehaviour
     public PlayerInput MyPlayerInput;
     private Rigidbody2D myRB;
 
-    public float lastY;
-
     // Start is called before the first frame update
     void Start()
     {
