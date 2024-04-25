@@ -13,6 +13,10 @@ public class FoxPatrol : BaseDeath
 
     [SerializeField] private float moveSpeed;
 
+    [SerializeField] private bool moonwalking;
+    private Animator foxAnim;
+
+
 
     private bool waiting;
     private float targetPoint;
@@ -20,6 +24,7 @@ public class FoxPatrol : BaseDeath
     private void Start()
     {
         targetPoint = leftPatrolPoint;
+        foxAnim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -43,10 +48,25 @@ public class FoxPatrol : BaseDeath
             {
                 if (stopAtEnds)
                 {
-                    StartCoroutine(StopThenGo(rightPatrolPoint));
+                    if (moonwalking)
+                    {
+                        StartCoroutine(StopThenGo(rightPatrolPoint, Vector3.zero));
+                    }
+                    else
+                    {
+                        StartCoroutine(StopThenGo(rightPatrolPoint, new Vector3(0, 180, 0)));
+                    }
                 }
                 else
                 {
+                    if (moonwalking)
+                    {
+                        transform.rotation = Quaternion.Euler(Vector3.zero);
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                    }
                     targetPoint = rightPatrolPoint;
                 }
             }
@@ -54,10 +74,27 @@ public class FoxPatrol : BaseDeath
             {
                 if (stopAtEnds)
                 {
-                    StartCoroutine(StopThenGo(leftPatrolPoint));
+                    if (moonwalking)
+                    {
+                        StartCoroutine(StopThenGo(leftPatrolPoint, new Vector3(0, 180, 0)));
+                    }
+                    else
+                    {
+                        StartCoroutine(StopThenGo(leftPatrolPoint, Vector3.zero));
+                    }
+                    
                 }
                 else
                 {
+                    if (moonwalking)
+                    {
+                        transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.Euler(Vector3.zero);
+                    }
+                    
                     targetPoint = leftPatrolPoint;
                 }
             }
@@ -65,11 +102,12 @@ public class FoxPatrol : BaseDeath
     }
         
 
-    private IEnumerator StopThenGo(float targetPoint)
+    private IEnumerator StopThenGo(float targetPoint, Vector3 rot)
     {
         waiting = true;
         yield return new WaitForSecondsRealtime(stopDelayTime);
         this.targetPoint = targetPoint;
+        transform.rotation = Quaternion.Euler(rot);
         waiting = false;
     }
 }
