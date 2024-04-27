@@ -505,6 +505,72 @@ MonoBehaviour:
     isBackground: 1
     soundSource: 1
     soundWeight: 5
+  - name: fox1
+    audClip: {fileID: 8300000, guid: 23839f22b1e907545b49f8925911ef10, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 0
+    soundSource: 2
+    soundWeight: 5
+  - name: fox2
+    audClip: {fileID: 8300000, guid: 21be32f63928c114ab1aec9fe1a3cbe0, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 0
+    soundSource: 2
+    soundWeight: 5
+  - name: fox3
+    audClip: {fileID: 8300000, guid: 57681b8ea7dadc64586a355682410ed9, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 0
+    soundSource: 2
+    soundWeight: 5
+  - name: fox4
+    audClip: {fileID: 8300000, guid: 23839f22b1e907545b49f8925911ef10, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 0
+    soundSource: 2
+    soundWeight: 5
+  - name: fox5
+    audClip: {fileID: 8300000, guid: d2166325e1868fa48aacf57c59118dc2, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 0
+    soundSource: 2
+    soundWeight: 5
+  - name: PlayerDeath
+    audClip: {fileID: 8300000, guid: 6b5a22ed7b1081f45a9b2ec492bab8a3, type: 3}
+    clipVolume: 1
+    clipPitch: 1
+    canLoop: 0
+    source: {fileID: 0}
+    weightedRangeLow: 0
+    weightedRangeHigh: 0
+    isBackground: 0
+    soundSource: 2
+    soundWeight: 5
   masterMixer: {fileID: 24300002, guid: a3e9e4df55d704843ba59de0bc6c85a1, type: 2}
   musicVolume: 1
   Levels:

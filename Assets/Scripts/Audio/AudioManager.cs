@@ -76,6 +76,8 @@ public class AudioManager : MonoBehaviour
 
         WeighSounds();
 
+        PlayBackgroundSound(Sound.SoundFlavor.NATURE_ENVIRONMENT);
+
         //Cursor.SetCursor(glassTexture, hotSpot, cursorMode);
     }
 
@@ -252,9 +254,7 @@ public class AudioManager : MonoBehaviour
             natureChance = (7f - Levels[level - 1].deforestationLevel) / 6f;
             if (Levels[level-1].progressiveDeforestation && level != Levels.Length)
             {
-                print("Time left: " + timeLeft + " / " + maxTimeLeft);
                 natureChance -= (1 -(timeLeft / maxTimeLeft)) * (((7f - Levels[level - 1].deforestationLevel) / 6f) - ((7f - Levels[level].deforestationLevel) / 6f));
-                print(natureChance);
             }
 
             
@@ -295,7 +295,6 @@ public class AudioManager : MonoBehaviour
 
     private void PlayWeightedBackgroundSound(Sound.SoundFlavor flavor)
     {
-        print(flavor);
         string playMe = "";
         while(playMe.Equals(""))
         {
@@ -335,6 +334,11 @@ public class AudioManager : MonoBehaviour
         Play(playMe);
     }
 
+    public void PlayFoxSound()
+    {
+        int soundIndex = UnityEngine.Random.Range(1, 6);
+        Play("fox" + soundIndex);
+    }
 
     #endregion
 }
