@@ -715,22 +715,26 @@ MonoBehaviour:
   transitionInfo:
   - transitionTime: 3
     handSpeed: 0.1
+    fact: Deforestation is the second-leading cause of greenhouse gas emissions.
+  - transitionTime: 3
+    handSpeed: 0.15
     fact: 'As humans destroy forests, it becomes harder for animals to find food. '
   - transitionTime: 3
-    handSpeed: 0.1
-    fact: Sample Text 2
+    handSpeed: 0.2
+    fact: 'Deforestation threatens biodiversity and leads to more species becoming
+      endangered. '
   - transitionTime: 3
-    handSpeed: 0.1
-    fact: Sample Text 3
+    handSpeed: 0.3
+    fact: 'The loss of forests increases erosion rates, increasing the liklihood
+      for landslides. '
   - transitionTime: 3
-    handSpeed: 0.1
-    fact: Sample Text 4
+    handSpeed: 0.4
+    fact: The United States lost 1.38 Hectacres of tree cover in 2023, whch equates
+      to 5,329 miles squared.
   - transitionTime: 3
-    handSpeed: 0.1
-    fact: Sample Text 5
-  - transitionTime: 3
-    handSpeed: 0.1
-    fact: Sample Text 6
+    handSpeed: 0.5
+    fact: The leading cause of deforestation in the United States is Logging, followed
+      by Urbanization and Wildfires.
   hourHand: {fileID: 355923639}
   minHand: {fileID: 1191164456}
   factText: {fileID: 1667894729}
