@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 1657934070, guid: 6f0f43dbd77e5f14d815436eb9a42d64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,6 +126,8 @@ MonoBehaviour:
   stopDelayTime: 0
   moveSpeed: 3
   moonwalking: 1
+  minTimeBetweenSounds: 3
+  maxTimeBetweenSounds: 6
 --- !u!60 &800150518539232127
 PolygonCollider2D:
   m_ObjectHideFlags: 0

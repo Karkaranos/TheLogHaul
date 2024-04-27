@@ -36,6 +36,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float minHumanTime = .5f;
     [SerializeField] private float maxHumanTime = 6;
 
+    private int lvlIndex;
+
+    public int LvlIndex { get => lvlIndex; set => lvlIndex = value; }
+
     //public Texture2D glassTexture;
     //public CursorMode cursorMode = CursorMode.Auto;
     //public Vector2 hotSpot = Vector2.zero;
@@ -71,6 +75,8 @@ public class AudioManager : MonoBehaviour
         }
 
         WeighSounds();
+
+        PlayBackgroundSound(Sound.SoundFlavor.NATURE_ENVIRONMENT);
 
         //Cursor.SetCursor(glassTexture, hotSpot, cursorMode);
     }
@@ -228,13 +234,13 @@ public class AudioManager : MonoBehaviour
         Play("Cars");
     }
 
-    public void PlayStaticLevelBackground(int level)
+    public void PlayLevelBackgroundNoise(int level)
     {
         StopAllBackground();
-        background = StartCoroutine(StaticBackground(level));
+        background = StartCoroutine(BackgroundNoise(level));
     }
 
-    private IEnumerator StaticBackground(int level)
+    private IEnumerator BackgroundNoise(int level)
     {
         float maxTimeLeft= 0, timeLeft = 0;
         if(Levels[level-1].progressiveDeforestation)
@@ -248,9 +254,7 @@ public class AudioManager : MonoBehaviour
             natureChance = (7f - Levels[level - 1].deforestationLevel) / 6f;
             if (Levels[level-1].progressiveDeforestation && level != Levels.Length)
             {
-                print("Time left: " + timeLeft + " / " + maxTimeLeft);
                 natureChance -= (1 -(timeLeft / maxTimeLeft)) * (((7f - Levels[level - 1].deforestationLevel) / 6f) - ((7f - Levels[level].deforestationLevel) / 6f));
-                print(natureChance);
             }
 
             
@@ -291,7 +295,6 @@ public class AudioManager : MonoBehaviour
 
     private void PlayWeightedBackgroundSound(Sound.SoundFlavor flavor)
     {
-        print(flavor);
         string playMe = "";
         while(playMe.Equals(""))
         {
@@ -329,6 +332,12 @@ public class AudioManager : MonoBehaviour
         }
 
         Play(playMe);
+    }
+
+    public void PlayFoxSound()
+    {
+        int soundIndex = UnityEngine.Random.Range(1, 6);
+        Play("fox" + soundIndex);
     }
 
     #endregion

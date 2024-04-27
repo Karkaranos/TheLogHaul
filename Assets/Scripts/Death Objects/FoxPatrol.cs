@@ -16,6 +16,9 @@ public class FoxPatrol : BaseDeath
     [SerializeField] private bool moonwalking;
     private Animator foxAnim;
 
+    [Header("Fox Sounds")]
+    [SerializeField] private float minTimeBetweenSounds = 1f;
+    [SerializeField] private float maxTimeBetweenSounds = 3f;
 
 
     private bool waiting;
@@ -25,6 +28,7 @@ public class FoxPatrol : BaseDeath
     {
         targetPoint = leftPatrolPoint;
         foxAnim = GetComponent<Animator>();
+        StartCoroutine(WhatDoesTheFoxSay());
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -109,5 +113,15 @@ public class FoxPatrol : BaseDeath
         this.targetPoint = targetPoint;
         transform.rotation = Quaternion.Euler(rot);
         waiting = false;
+    }
+
+    private IEnumerator WhatDoesTheFoxSay()
+    {
+        for(; ; )
+        {
+            FindObjectOfType<AudioManager>().PlayFoxSound();
+            yield return new WaitForSeconds(Random.Range(minTimeBetweenSounds, maxTimeBetweenSounds));
+
+        }
     }
 }
