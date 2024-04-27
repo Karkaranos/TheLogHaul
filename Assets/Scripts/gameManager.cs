@@ -21,6 +21,7 @@ public class gameManager : MonoBehaviour
 
     public void UpdateCounter()
     {
+        //Cade add food picked up sfx here
         FoodCollected++;
         foodHaveTxt.text = FoodCollected + ""; 
         outOf.text = goal + "";

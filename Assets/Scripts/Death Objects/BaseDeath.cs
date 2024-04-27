@@ -16,6 +16,7 @@ public class BaseDeath : MonoBehaviour
     }
     public void KillPlayer()
     {
+        //cade add death sfx here
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
