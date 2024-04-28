@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject creditsMenu;
+    [SerializeField] private GameObject controlsMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,10 @@ public class UIManager : MonoBehaviour
     {
         
     }
-
+    public void Quit()
+    {
+        Application.Quit();
+    }
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
@@ -26,5 +31,23 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         //FindObjectOfType<AudioManager>().PlayBirds();
+    }
+
+    public void OpenMenu(int i)
+    {
+        if (i <= 0)
+        {
+            creditsMenu.SetActive(true);
+        }
+        else
+        {
+            controlsMenu.SetActive(true);
+        }
+    }
+
+    public void CloseMenus()
+    {
+        creditsMenu.SetActive(false);
+        controlsMenu.SetActive(false);
     }
 }
