@@ -157,14 +157,6 @@ public class PlayerBehavior : MonoBehaviour
             myRB.velocity = Vector2.zero;
         }
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.transform.position.y < gameObject.transform.position.y)
-        {
-            canjump = true;
-        }
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -212,5 +204,10 @@ public class PlayerBehavior : MonoBehaviour
     public void giveJump()
     {
         canjump = true;
+    }
+
+    public void takeJump()
+    {
+        canjump = false;
     }
 }
