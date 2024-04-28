@@ -43,6 +43,13 @@ public class PlayerBehavior : MonoBehaviour
         jump.performed += jump_performed;
     }
 
+    private void OnDestroy()
+    {
+        Move.started-= Move_started;
+        Move.canceled -= Move_Cancelled;
+        jump.performed-= jump_performed;
+    }
+
     private void jump_performed(InputAction.CallbackContext obj)
     {
         if(canjump)
