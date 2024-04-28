@@ -211,6 +211,6 @@ public class PlayerBehavior : MonoBehaviour
 
     public void giveJump()
     {
-
+        canjump = true;
     }
 }
