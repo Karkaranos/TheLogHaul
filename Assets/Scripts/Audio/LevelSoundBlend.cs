@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name :         LevelSoundBlend.cs
+// Author :            Cade R. Naylor
+// Creation Date :     April 17, 2024
+//
+// Brief Description :  Creates the LevelSoundBlend class which holds onto a level's
+                            sound controls
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

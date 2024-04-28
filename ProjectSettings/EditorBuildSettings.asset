@@ -13,26 +13,29 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: 245bf88c26759e644a18dbbb58ec9e92
+    guid: 13322dbe6833e524f90b34684509ea32
   - enabled: 1
     path: Assets/Scenes/Level3.unity
-    guid: 2e62803f4d5561b448b80f54a73c6f6b
+    guid: ca82d23cf2c556b42a31209800b0368d
   - enabled: 1
     path: Assets/Scenes/Level4.unity
-    guid: df07b084ce864504b8bc3bd7eae0f6c1
+    guid: 12fdffddc3cf20b41bf5f940a75c4b03
   - enabled: 1
     path: Assets/Scenes/Level5.unity
-    guid: b2a96126ffb8382468faf6a205ac312e
+    guid: e36b96ec17398d04da511796b699c213
   - enabled: 1
     path: Assets/Scenes/Level6.unity
-    guid: a9b929eebd1179b43b26661b18a855f2
+    guid: c9bc611c96fa29f458fcc01d501f1064
   - enabled: 1
     path: Assets/Scenes/Level7.unity
-    guid: 7e483db704b65d1478e37abd9c9586f9
+    guid: 8f9126f0b703a2c43b224be7d332a2d7
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: a1d6edd66bd2a13489a818d70db6ce4a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelTransition.unity
     guid: 5473026e3d599ca4494a2570bd1a6110
+  - enabled: 1
+    path: Assets/Scenes/PositiveEnd.unity
+    guid: a3baf81ecdc9b004b9cbb504b9b06f71
   m_configObjects: {}

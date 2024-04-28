@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name :         ClockController.cs
+// Author :            Cade R. Naylor
+// Creation Date :     April 24, 2024
+//
+// Brief Description :  Makes the clock hands spin on transition levels
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +30,7 @@ public class ClockController : MonoBehaviour
         while(timeLeft > 0)
         {
             hourHand.transform.eulerAngles += new Vector3(0, 0, -1 * transitionInfo[level].handSpeed);
-            minHand.transform.eulerAngles += new Vector3(0, 0, -1 * transitionInfo[level].handSpeed * 60);
+            minHand.transform.eulerAngles += new Vector3(0, 0, -1 * transitionInfo[level].handSpeed * 30);
             timeLeft -= Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }
