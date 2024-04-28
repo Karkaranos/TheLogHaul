@@ -25,4 +25,12 @@ public class JumpBox : MonoBehaviour
             Player.giveJump();
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == ("Ground"))
+        {
+            Player.takeJump();
+        }
+    }
 }
