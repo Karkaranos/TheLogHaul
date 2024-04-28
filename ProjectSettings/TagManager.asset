@@ -7,6 +7,7 @@ TagManager:
   - Climbable
   - Tree
   - smog
+  - Ground
   layers:
   - Default
   - TransparentFX

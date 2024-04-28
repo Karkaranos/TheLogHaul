@@ -208,4 +208,9 @@ public class PlayerBehavior : MonoBehaviour
             speed = speed * smogMultiplier;
         }
     }
+
+    public void giveJump()
+    {
+        canjump = true;
+    }
 }
