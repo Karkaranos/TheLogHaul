@@ -160,9 +160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 1
-  speed: 5
+  speed: 6
   smogMultiplier: 2
-  Jump: {x: 0, y: 10}
+  Jump: {x: 0, y: 9}
   canClimb: 0
   canjump: 1
   jumping: 0
