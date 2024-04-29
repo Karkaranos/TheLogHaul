@@ -226,7 +226,6 @@ public class AudioManager : MonoBehaviour
     {
         StopAllBackground();
         Play("Birds");
-        print("should play audio");
     }
 
     public void PlayCars()
@@ -341,16 +340,14 @@ public class AudioManager : MonoBehaviour
         float maxTimeLeft = 12, timeLeft = 12;
         timeLeft = maxTimeLeft;
         float natureChance = 0;
-        Debug.Log("haha");
         while (true)
         {
             float minTime, maxTime;
-            natureChance += .05f;
+            natureChance += .1f;
 
 
 
             float randomChance = UnityEngine.Random.Range(0f, 1f);
-
             Sound.SoundFlavor flavor;
 
             if (randomChance < natureChance)
@@ -377,7 +374,6 @@ public class AudioManager : MonoBehaviour
 
             float waitForMe = UnityEngine.Random.Range(minTime, maxTime);
             timeLeft = Mathf.Clamp(timeLeft - waitForMe, 0, maxTimeLeft);
-            print(natureChance);
 
             yield return new WaitForSeconds(waitForMe);
 

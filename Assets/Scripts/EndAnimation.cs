@@ -21,11 +21,7 @@ public class EndAnimation : MonoBehaviour
 
     IEnumerator Timer()
     {
-        FindObjectOfType<AudioManager>().PlayEndingSound();
-        if(!FindObjectOfType<AudioManager>())
-        {
-            Debug.Log("hjkfdshgdl");
-        }
+        StartCoroutine(FindObjectOfType<AudioManager>().PlayEndingSound());
         float alpha = 1;
         for(int i=0; i<factCycles.Length; i++)
         {
