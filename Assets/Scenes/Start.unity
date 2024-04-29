@@ -2878,7 +2878,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Programmers: Tyler Hayes, Brenden Burtz\r\n\r\nGame Designers: Alex Bell,
     Charlie O\u2019Shaughnessy \r\n\r\nProducer: Cade Naylor\r\n\r\nArt: Rider Hagen,
-    Aiden Vandeburg\r\n\r\nUI: Jakob Holmes"
+    Aiden Vandeberg\r\n\r\nUI: Jakob Holmes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
