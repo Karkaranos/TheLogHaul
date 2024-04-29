@@ -125,7 +125,7 @@ MonoBehaviour:
   stopAtEnds: 0
   stopDelayTime: 0
   moveSpeed: 3
-  moonwalking: 1
+  moonwalking: 0
   minTimeBetweenSounds: 3
   maxTimeBetweenSounds: 6
 --- !u!60 &800150518539232127

@@ -30,7 +30,7 @@ public class ClockController : MonoBehaviour
         while(timeLeft > 0)
         {
             hourHand.transform.eulerAngles += new Vector3(0, 0, -1 * transitionInfo[level].handSpeed);
-            minHand.transform.eulerAngles += new Vector3(0, 0, -1 * transitionInfo[level].handSpeed * 30);
+            minHand.transform.eulerAngles += new Vector3(0, 0, -1 * transitionInfo[level].handSpeed * 10);
             timeLeft -= Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }

@@ -76,6 +76,7 @@ public class AudioManager : MonoBehaviour
 
         WeighSounds();
 
+        StopAllBackground();
         PlayBackgroundSound(Sound.SoundFlavor.NATURE_ENVIRONMENT);
 
         //Cursor.SetCursor(glassTexture, hotSpot, cursorMode);
@@ -334,6 +335,54 @@ public class AudioManager : MonoBehaviour
         Play(playMe);
     }
 
+    public IEnumerator PlayEndingSound()
+    {
+        StopAllBackground();
+        float maxTimeLeft = 12, timeLeft = 12;
+        timeLeft = maxTimeLeft;
+        float natureChance = 0;
+        Debug.Log("haha");
+        while (true)
+        {
+            float minTime, maxTime;
+            natureChance += .05f;
+
+
+
+            float randomChance = UnityEngine.Random.Range(0f, 1f);
+
+            Sound.SoundFlavor flavor;
+
+            if (randomChance < natureChance)
+            {
+                flavor = Sound.SoundFlavor.NATURE_ENVIRONMENT;
+                minTime = minNatureTime;
+                maxTime = maxNatureTime;
+            }
+            else
+            {
+                flavor = Sound.SoundFlavor.HUMAN_ENVIRONMENT;
+                minTime = minHumanTime;
+                maxTime = maxHumanTime;
+            }
+
+            if (useWeightedAmounts)
+            {
+                PlayWeightedBackgroundSound(flavor);
+            }
+            else
+            {
+                PlayBackgroundSound(flavor);
+            }
+
+            float waitForMe = UnityEngine.Random.Range(minTime, maxTime);
+            timeLeft = Mathf.Clamp(timeLeft - waitForMe, 0, maxTimeLeft);
+            print(natureChance);
+
+            yield return new WaitForSeconds(waitForMe);
+
+        }
+    }
     public void PlayFoxSound()
     {
         int soundIndex = UnityEngine.Random.Range(1, 6);

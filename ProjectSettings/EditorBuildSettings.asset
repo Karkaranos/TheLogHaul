@@ -30,12 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level7.unity
     guid: 8f9126f0b703a2c43b224be7d332a2d7
   - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: a1d6edd66bd2a13489a818d70db6ce4a
-  - enabled: 0
-    path: Assets/Scenes/LevelTransition.unity
-    guid: 5473026e3d599ca4494a2570bd1a6110
-  - enabled: 1
     path: Assets/Scenes/PositiveEnd.unity
     guid: a3baf81ecdc9b004b9cbb504b9b06f71
+  - enabled: 0
+    path: Assets/Scenes/EndScene.unity
+    guid: a1d6edd66bd2a13489a818d70db6ce4a
+  - enabled: 1
+    path: Assets/Scenes/LevelTransition.unity
+    guid: 5473026e3d599ca4494a2570bd1a6110
   m_configObjects: {}
